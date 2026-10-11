@@ -5,12 +5,16 @@ The example uses **Tempest**; replace the name, slug and ports with the new proj
 ## 1. Copy the template
 
 ```bash
-cp -r /c/Users/ernes/GameDev/template /c/Users/ernes/Tempest
+cp -r /c/Users/ernes/GameDev/template /c/Users/ernes/Tempest && rm -rf /c/Users/ernes/Tempest/.git
 ```
 
-PowerShell: `Copy-Item -Recurse C:\Users\ernes\GameDev\template C:\Users\ernes\Tempest`
+PowerShell: `Copy-Item -Recurse C:\Users\ernes\GameDev\template C:\Users\ernes\Tempest; Remove-Item -Recurse -Force C:\Users\ernes\Tempest\.git`
 
-Never edit the template in place for one game, never `git init` the template folder, and never copy a running project's `.claude/autodrive/`, `AUTONOMOUS_RUN` or `ALLOW_STOP` markers (the template has none).
+Or straight from GitHub: `git clone https://github.com/Ernestohh/TemplateAI.git Tempest`, then delete `Tempest\.git`.
+
+**Always delete the copied `.git` folder.** The template is its own repository (github.com/Ernestohh/TemplateAI). A new game must start a fresh history with its own remote (step 3).
+
+Never edit the template in place for one game, and never copy a running project's `.claude/autodrive/`, `AUTONOMOUS_RUN` or `ALLOW_STOP` markers (the template has none).
 
 ## 2. Fill the placeholders
 
