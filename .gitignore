@@ -1,0 +1,19 @@
+.env
+.env.*
+.claude/ALLOW_STOP
+.claude/AUTONOMOUS_RUN
+.claude/settings.local.json
+*.log
+__pycache__/
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+Docs/.memory.json
+.playwright-mcp/
+Docs/progress/_scratch/
+site-dist/
+
+# autodrive runtime files (chunk outputs, markers)
+.claude/autodrive/

@@ -1,0 +1,42 @@
+{
+  "updated_utc": "{{SETUP_DATE}}",
+  "run_started_utc": null,
+  "elapsed_minutes": 0,
+  "commits": 0,
+  "autodrive_chunks": 0,
+  "claude_cost_usd_reported": 0,
+  "lines_of_code": {
+    "ts_tsx": 0,
+    "css": 0,
+    "json_data_approx": 0,
+    "method": "wc -l on tracked files"
+  },
+  "assets": {
+    "svg_authored": {
+      "in_use": 0,
+      "rejected_kept": 0
+    },
+    "procedural": 0,
+    "external": {
+      "fonts": 0,
+      "music": 0,
+      "other": 0
+    },
+    "paid_generated": {
+      "attempted": 0,
+      "accepted": 0,
+      "rejected": 0
+    }
+  },
+  "spend": {
+    "paid_assets_usd": 0,
+    "budget_usd": "{{BUDGET_USD}}"
+  },
+  "bugs_fixed": 0,
+  "performance": {},
+  "playtests": {},
+  "reviews": {},
+  "tokens": {
+    "see": "Docs/TOKENS.json (python -I scripts/token_usage.py)"
+  }
+}

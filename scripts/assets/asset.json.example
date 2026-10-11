@@ -1,0 +1,16 @@
+{
+  "asset_id": "illustration_example",
+  "lane": "art",
+  "kind": "illustration",
+  "created_utc": "2026-01-01T00:00:00Z",
+  "route": "authored-svg",
+  "source": "hand-authored in this project",
+  "licence": "project-owned",
+  "purpose": "example illustration for one card or screen",
+  "output_path": "assets/generated/illustrations/illustration_example.svg",
+  "size_bytes": 0,
+  "attempt": 1,
+  "result": "accepted",
+  "notes": "",
+  "source_concept": "Docs/concepts/proposed/illustrations-sheet-v1.png"
+}

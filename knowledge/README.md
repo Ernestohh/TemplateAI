@@ -1,0 +1,1 @@
+Domain notes that the skills link to: third-party resources, tool lessons, format conventions. One topic per file. Append new lessons to `Docs/PIPELINE_LESSONS.md`; move a topic here once it grows beyond a few lines.

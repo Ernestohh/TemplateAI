@@ -1,0 +1,23 @@
+{
+  "_comment": "Input for scripts/fill_template.py. Keys are the placeholder names. Required: GAME_NAME, GENRE, SETTING_SHORT, ONE_PARAGRAPH_PITCH, TAGLINE, DEV_PORT, PREVIEW_PORT, GITHUB_REMOTE. Optional keys show their defaults or an example; delete any optional key to use the default. Keys starting with _ are ignored. QUESTIONS.md says which answer fills which key.",
+  "GAME_NAME": "Tempest",
+  "GAME_SLUG": "tempest",
+  "GENRE": "turn-based tactics roguelite",
+  "SETTING_SHORT": "set on storm-wracked sky islands with a hopeful adventure tone",
+  "ONE_PARAGRAPH_PITCH": "Lead a small crew of sky-sailors from island to island through a storm that never ends. Every fight happens on a tiny grid where the wind shoves everyone one tile each round, so positioning is everything. Between runs you rebuild your harbour and unlock new crew.",
+  "TAGLINE": "a tactics roguelite on sky islands where the storm moves everyone.",
+  "TRAILER_LEDE": "Sail a crew of sky-sailors through an endless storm. The wind shoves every unit each round, so the right tile wins the fight.",
+  "DEV_PORT": 5373,
+  "PREVIEW_PORT": 4373,
+  "GITHUB_REMOTE": "https://github.com/Ernestohh/Tempest.git",
+  "DOMAIN": "tempest.kryptos.gg",
+  "SERVER_IP": "72.62.17.59",
+  "BUDGET_USD": 0,
+  "LARGE_GATES": "M2, M5 and M7",
+  "ACCEPTANCE_FROM": "M3",
+  "MVP_MILESTONE": "M7",
+  "MVP_TAG": "m7",
+  "SIM_SYSTEMS": "grid combat, wind push, island generation, crew, harbour meta",
+  "PLAYTEST_AREAS": "first minutes, combat readability, wind push, island map, crew and losses, boss, harbour meta, phone, fun",
+  "PROJECT_DIR_WIN": "C:\\Users\\ernes\\Tempest"
+}

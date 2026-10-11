@@ -1,0 +1,1 @@
+Put the owner-approved images here: the logo, card frames, portrait sheets, battle and map mockups, the hub. Name them descriptively. They are the visual target and the main input for the Art lane. Agents never move files into this folder; only the owner approves.

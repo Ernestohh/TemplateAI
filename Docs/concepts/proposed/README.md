@@ -1,0 +1,1 @@
+Agent-authored concept sheets go here, as PNG contact sheets plus their SVG sources under assets/generated/. Name them `<batch>-v<n>.png`. They stay pending owner review until the owner moves one to ../approved/.
