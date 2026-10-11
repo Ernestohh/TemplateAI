@@ -8,7 +8,7 @@ What to study from each reference (TASK.md §0):
 
 | Reference | Study |
 |---|---|
-| {{FILL: REFS study table}} | <!-- The same references as TASK.md §0, one line each on what to study. Zephyr row: "Pokémon | Effectiveness labels, HP bars, short battle text, one-glance readability." --> |
+| {{FILL: REFS study table}} | <!-- The same references as TASK.md §0, one line each on what to study. Example row: "Pokémon | Effectiveness labels, HP bars, short battle text, one-glance readability." --> |
 
 {{FILL: REFS art traditions}}
-<!-- Public-domain art traditions to describe (never to copy). Zephyr: "Folk-art references (public-domain traditions, describe only): lubok woodcut prints; Palekh lacquer miniatures; red-and-gold-on-black floral painting." Delete if none. -->
+<!-- Public-domain art traditions to describe (never to copy). Example: "Folk-art references (public-domain traditions, describe only): lubok woodcut prints; Palekh lacquer miniatures; red-and-gold-on-black floral painting." Delete if none. -->

@@ -106,7 +106,7 @@ Follow `Docs/MODEL_ROUTING.md`. Summary of the standing rules:
 
 ## 5b. Shared machine (other runs in parallel)
 
-- Other autonomous runs may work on the same PC at the same time. `PORTS.md` is the port registry. {{GAME_NAME}} uses its own ports: **vite dev {{DEV_PORT}}, vite preview {{PREVIEW_PORT}}, both `strictPort: true`**. Never use, kill or reuse another project's ports or processes, and never touch another project's folder under `C:\Users\ernes\`.
+- Other autonomous runs may work on the same PC at the same time. `PORTS.md` is the port registry. {{GAME_NAME}} uses its own ports: **vite dev {{DEV_PORT}}, vite preview {{PREVIEW_PORT}}, both `strictPort: true`**. Never use, kill or reuse another project's ports or processes, and never touch another project's folder under `{{PROJECTS_ROOT}}`.
 - Performance numbers (fps, frame times, tick times, soak results) measured while another run is busy are noisy. Before you treat a drop as a regression, re-measure solo (or at least twice at a quiet moment) and record both numbers with the conditions.
 - Kill processes by PID only, and only processes you started.
 

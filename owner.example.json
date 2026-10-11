@@ -1,0 +1,17 @@
+{
+  "_comment": "Copy this file to owner.json (git-ignored) and fill in your values once. scripts/fill_template.py and .claude/hooks/bash_guard.py read owner.json. Keys starting with _ are ignored.",
+  "projects_root": "C:\\Users\\you\\GameDev\\projects",
+  "base_domain": "games.example.com",
+  "server_host": "your-server.example.com",
+  "server_user": "deploy",
+  "_server_user_note": "Recommended: a non-root deploy user with passwordless sudo for nginx, certbot and the web root (see deploy/README.md). root works too but is not recommended.",
+  "web_root_base": "/var/www",
+  "github_user": "your-github-name",
+  "git_name": "Your Name",
+  "git_email": "you@example.com",
+  "_ports_registry_note": "Optional. Every game that may run in parallel on this machine, each with a unique dev/preview port pair. The bash guard blocks other projects' folders and ports.",
+  "ports_registry": [
+    {"project": "Project A", "dev": 5173, "preview": 4173},
+    {"project": "Project B", "dev": 5273, "preview": 4273}
+  ]
+}

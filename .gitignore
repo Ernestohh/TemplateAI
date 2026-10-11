@@ -1,5 +1,7 @@
 .env
 .env.*
+# local owner config (personal paths, server, GitHub user); copy owner.example.json
+owner.json
 .claude/ALLOW_STOP
 .claude/AUTONOMOUS_RUN
 .claude/settings.local.json

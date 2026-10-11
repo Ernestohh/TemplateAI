@@ -5,12 +5,12 @@
 <!--
 TEMPLATE NOTE {{FILL: delete this TEMPLATE NOTE comment}} Claude writes this file from QUESTIONS.md "Art style", "Setting and theme" and
 "References". Keep every section below; a filled draft is roughly 150-180 lines. Use exact hex values, font package
-names, pixel sizes and durations, so agents can follow it without judgement calls. Zephyr's draft is the model.
+names, pixel sizes and durations, so agents can follow it without judgement calls. The examples in the comments set the depth.
 -->
 
 **Inspiration (describe, never name in prompts or files):**
 {{FILL: STYLE inspiration}}
-<!-- 2-4 bullets naming art traditions or qualities, not products. Zephyr: "Russian lubok folk prints: woodcut outlines,
+<!-- 2-4 bullets naming art traditions or qualities, not products. Example: "Russian lubok folk prints: woodcut outlines,
      flat hand-tinted colour, caption ribbons" / "Palekh lacquer miniatures: jewel-like figures on deep black, fine gold
      hatching". Then one line on the tone ("beautiful and ornate, but the forest is dangerous"). -->
 
@@ -18,17 +18,17 @@ names, pixel sizes and durations, so agents can follow it without judgement call
 
 {{FILL: STYLE surfaces table}}
 <!-- | Surface | Where | Look | — usually 1-2 surfaces (the UI chrome and the illustrations).
-     Zephyr: | **Lacquer** | HUD, battle stage, map, hub, menus | Deep black lacquer ground, thin gold lines, jewel-colour figures, vermilion for action and danger. |
+     Example: | **Lacquer** | HUD, battle stage, map, hub, menus | Deep black lacquer ground, thin gold lines, jewel-colour figures, vermilion for action and danger. |
              | **Lubok** | Room, event and death cards, lore pages | Warm paper ground, bold black outline, flat hand-tinted fills, a caption ribbon. |
      Add the rule for how they combine ("a lubok card always sits inside a lacquer frame"). -->
 
 ## Keep
 {{FILL: STYLE keep}}
-<!-- 4-7 bullets. Zephyr: gold and vermilion on deep black; flat bold colour; ornate borders only on big frames; large legible numbers; one portrait family; one icon family. -->
+<!-- 4-7 bullets. Example: gold and vermilion on deep black; flat bold colour; ornate borders only on big frames; large legible numbers; one portrait family; one icon family. -->
 
 ## Upgrade
 {{FILL: STYLE upgrade}}
-<!-- 4-7 bullets of motion and juice with durations. Zephyr: card flip on room entry (3D, 320 ms); wind streaks across the queue; tokens slide when the preview changes; a seal stamp on big moments. -->
+<!-- 4-7 bullets of motion and juice with durations. Example: card flip on room entry (3D, 320 ms); wind streaks across the queue; tokens slide when the preview changes; a seal stamp on big moments. -->
 
 ## Avoid
 - Clutter.
@@ -37,10 +37,10 @@ names, pixel sizes and durations, so agents can follow it without judgement call
 - Mixed icon styles.
 - Lore walls (≤ 2 short sentences per text block outside dedicated lore screens).
 {{FILL: STYLE avoid extras}}
-<!-- Setting-specific avoids. Zephyr: photographic textures; neon and purple-gradient fantasy; faux-Cyrillic. -->
+<!-- Setting-specific avoids. Example: photographic textures; neon and purple-gradient fantasy; faux-Cyrillic. -->
 
 **Forbidden symbols and content.** {{FILL: STYLE forbidden list}}
-<!-- What must never appear, even as ornament, plus a list of safe ornament. Zephyr: the kolovrat or any swastika-derived
+<!-- What must never appear, even as ornament, plus a list of safe ornament. Example: the kolovrat or any swastika-derived
      solar wheel, "Slavic runes" sets, the black sun; safe: rosettes, vines and berries, birds, stars, waves, fir branches. -->
 
 ## Palette (CSS tokens in `src/ui/theme.css`)
@@ -51,12 +51,12 @@ names, pixel sizes and durations, so agents can follow it without judgement call
 
 <!-- 15-25 tokens: backgrounds (3-4 steps), panel, line, 2-3 accent families with text-safe variants, text primary/
      secondary/disabled, illustration tints, one colour reserved per signature mechanic.
-     Zephyr rows: | `lacquer-900` | `#0b0a0c` | app background | / | `gold` | `#d4a53c` | frames, titles, party rings | /
+     Example rows: | `lacquer-900` | `#0b0a0c` | app background | / | `gold` | `#d4a53c` | frames, titles, party rings | /
      | `vermilion-text` | `#ef6a50` | vermilion text on black (≥ 4.5:1) | / | `azure` | `#5b9bd6` | wind only | -->
 
 **Semantic rules:**
 {{FILL: STYLE semantic colour rules}}
-<!-- What each important value looks like, and which colours are reserved. Zephyr: HP is vermilion-to-ochre; Breath is
+<!-- What each important value looks like, and which colours are reserved. Example: HP is vermilion-to-ochre; Breath is
      gold pips; wind is always azure and nothing else is azure; party is gold, enemies vermilion; one colour and one icon
      per damage kind. -->
 
@@ -74,7 +74,7 @@ names, pixel sizes and durations, so agents can follow it without judgement call
 
 <!-- 3-4 roles: logo/display, headings and names, UI body and numbers (must have tabular figures, name a fallback),
      optional lore font. Verify each licence on npm before writing it here.
-     Zephyr: | Logo, titles | **Ruslan Display** (`@fontsource/ruslan-display`) | ≥ 32 px only, uppercase |
+     Example: | Logo, titles | **Ruslan Display** (`@fontsource/ruslan-display`) | ≥ 32 px only, uppercase |
              | UI body, numbers | **PT Sans** (`@fontsource/pt-sans`, 400/700) | tabular-nums; fallback Fira Sans | -->
 
 **Sizes:** body 15 px, small 13 px (minimum), HUD numbers 18 px, popups 28–40 px, titles 32–64 px. (Adjust with a DECISIONS line.)
@@ -85,26 +85,26 @@ names, pixel sizes and durations, so agents can follow it without judgement call
 
 {{FILL: STYLE shapes and proportions}}
 <!-- Panels (fill, border, radius), big frames, the main card or tile format with its aspect ratio, buttons (primary/
-     secondary/disabled, min height 40 px, 44 px on touch), the signature UI element (Zephyr: the turn-queue rail with
+     secondary/disabled, min height 40 px, 44 px on touch), the signature UI element (example: the turn-queue rail with
      ≥ 10 medallion tokens, 40 px desktop / 32 px phone), portraits, the map, spacing scale 4/8/12/16/24/32, max width. -->
 
 ## Illustration rules
 
 {{FILL: STYLE illustration rules}}
 <!-- Per surface: viewBox, outline weight, fills, max colours (≤ 6 plus one accent), composition rules, the silhouette
-     test at phone size, which pieces are procedural. Zephyr lubok cards: viewBox 500×350, ink outline 3–4 px, flat fills,
+     test at phone size, which pieces are procedural. Example (lubok cards): viewBox 500×350, ink outline 3–4 px, flat fills,
      ornamental patterns instead of shading. -->
 
 ## Icons
 
 - **UI icons:** 24×24 viewBox, 1.75 px stroke, round caps and joins, `currentColor`, no fills except small accent dots.
 {{FILL: STYLE icon families}}
-<!-- Game-specific icon families with their frames. Zephyr: damage kinds 32×32 in a circle, traits in a diamond, room types in a rounded square. -->
+<!-- Game-specific icon families with their frames. Example: damage kinds 32×32 in a circle, traits in a diamond, room types in a rounded square. -->
 
 ## Motifs
 
 {{FILL: STYLE motifs}}
-<!-- 3-6 recurring visual motifs tied to mechanics. Zephyr: the firebird feather (currency); the needle chain as six HUD icons; the three riders; the hut on chicken legs (hub and logo); azure wind streaks. -->
+<!-- 3-6 recurring visual motifs tied to mechanics. Example: the firebird feather (currency); the needle chain as six HUD icons; the three riders; the hut on chicken legs (hub and logo); azure wind streaks. -->
 
 ## Motion
 
@@ -114,11 +114,11 @@ names, pixel sizes and durations, so agents can follow it without judgement call
 - A speed setting (1×/2×/3×) scales all gameplay animations.
 - With `prefers-reduced-motion` and the in-game setting: no flips (cross-fade instead), no shake, no shimmer.
 {{FILL: STYLE motion extras}}
-<!-- Game-specific animations with durations. Zephyr: card flip 320 ms; queue token slide 220 ms; phase-change card ≤ 1.6 s. -->
+<!-- Game-specific animations with durations. Example: card flip 320 ms; queue token slide 220 ms; phase-change card ≤ 1.6 s. -->
 
 ## Copy voice
 
 {{FILL: STYLE copy voice}}
 <!-- 2-3 sentences: tone, sentence length, an example line, how setting terms are glossed, the max length of feedback text.
-     Zephyr: "Short, concrete, a little ominous, with folk-tale cadence ('Beyond the third birch the path forgets you.').
+     Example: "Short, concrete, a little ominous, with folk-tale cadence ('Beyond the third birch the path forgets you.').
      Battle text is ≤ 6 words ('The wolf is delayed!')." -->

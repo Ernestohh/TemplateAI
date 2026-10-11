@@ -8,7 +8,7 @@ Everything in this project is in English: code, comments, docs, in-game text, pr
 TEMPLATE NOTE {{FILL: delete this TEMPLATE NOTE comment}}
 - Simple values like the game name, ports and domain were filled by scripts/fill_template.py.
 - Every FILL marker (double braces around "FILL: <id>") marks a rich section. Claude writes it from the owner's answers in QUESTIONS.md.
-  Replace the marker and its guidance comment with the real text, at the depth of the Zephyr examples.
+  Replace the marker and its guidance comment with the real text, at the depth of the examples.
   Keep the section numbers: CLAUDE.md, the agents, the skills and the scripts cite them (§1, §2, §5, §13-§20).
 - A filled TASK.md is roughly 450-550 lines. Every mechanic must be testable: give numbers, counts and ranges,
   and say where tunable values live (data/tuning.json).
@@ -22,7 +22,7 @@ TEMPLATE NOTE {{FILL: delete this TEMPLATE NOTE comment}}
 Write 1 paragraph: "Build **{{GAME_NAME}}**, a <genre> played in the web browser. It is set in <setting>, with a <tone> tone.
 The project starts from this empty repository; it is a web game (TypeScript, static site)."
 Then "The game in one breath:" with 4-6 bullets, one per signature mechanic, each with the player-facing hook in bold.
-Zephyr example:
+Example:
   - You lead a small party of folk heroes and mythic beings through a dungeon of illustrated room cards.
   - Battles run on a visible initiative timeline that a shifting **Wind** pushes every round.
   - Every room you enter moves the clock from **Day to Dusk to Night**. Night makes monsters stronger and rewards richer.
@@ -33,7 +33,7 @@ Zephyr example:
 **Quality bar.**
 {{FILL: TASK §0 quality bar}}
 <!--
-3-6 bullets of time-boxed, observable player outcomes. Zephyr example:
+3-6 bullets of time-boxed, observable player outcomes. Example:
   - Within 2 minutes a new player has entered a room, fought a battle and seen the wind move the turn queue.
   - Within one act (12–15 minutes) they have recruited a second hero, felt night fall, found part of the boss's death,
     lost or nearly lost someone.
@@ -45,7 +45,7 @@ It is a personal, non-commercial project: single player, offline-capable after t
 
 **Focus.** One polished, fully playable MVP beats a large rough one. Spend the time where the player looks:
 {{FILL: TASK §0 focus list}}
-<!-- 4-7 bullets: the moments that must feel great. Zephyr: the timeline battle and its preview; the wind; the room cards;
+<!-- 4-7 bullets: the moments that must feel great. Example: the timeline battle and its preview; the wind; the room cards;
      the night; the needle reveal and the boss kill; the moment a hero dies. -->
 
 Everything else stays minimal until the MVP (§2) is green.
@@ -58,7 +58,7 @@ Use these for the developer's understanding only. Their names never appear in th
 
 | Reference | What to learn from it |
 |---|---|
-| {{FILL: TASK §0 references table}} | <!-- 4-8 rows from QUESTIONS.md "References". Zephyr row: "Slay the Spire | The run map's readable choices, rewards with a pick of three, relics, act structure and bosses." --> |
+| {{FILL: TASK §0 references table}} | <!-- 4-8 rows from QUESTIONS.md "References". Example row: "Slay the Spire | The run map's readable choices, rewards with a pick of three, relics, act structure and bosses." --> |
 
 ## 1. The MVP experience
 
@@ -67,7 +67,7 @@ Use these for the developer's understanding only. Their names never appear in th
 One sentence naming the MVP slice and its length ("The MVP is **Act 1: the Haunted Forest**, fully playable from start
 to finish in 12–15 minutes."), then a numbered list of 8-12 steps that walk one complete session from the title screen
 to the second session starting differently. Each step is concrete enough to become a gold-path checkpoint.
-Zephyr steps (abridged): 1 Title and hub (intro, skippable) - 2 New run (pick a hero, seed shown) - 3 Explore (map, room
+Example steps (abridged): 1 Title and hub (intro, skippable) - 2 New run (pick a hero, seed shown) - 3 Explore (map, room
 cards, clock advances) - 4 First battle within 2 minutes (queue, preview, wind, intents) - 5 Recruit - 6 Dusk and night -
 7 Rest, shop, events - 8 The needle chain - 9 Boss - 10 Death and the end - 11 Run summary - 12 Back at the hub, spend,
 next run differs.
@@ -80,7 +80,7 @@ Everything on this path must be reliable: no softlocks, no NaN/Infinity, no lost
 Priorities, in order:
 {{FILL: TASK §2 priorities}}
 <!-- 5-8 numbered priorities, core loop first, art/audio/phone polish/performance last.
-     Zephyr: 1 Timeline battle core - 2 The Wind - 3 Dungeon crawl and Day/Dusk/Night - 4 Party and permadeath -
+     Example: 1 Timeline battle core - 2 The Wind - 3 Dungeon crawl and Day/Dusk/Night - 4 Party and permadeath -
      5 Boss and the needle - 6 Meta - 7 Art and audio pass, phone polish, performance. -->
 
 Not in the MVP (only after every P0 and P1 passes, and then in this order): {{FILL: TASK §2 post-MVP list}}. Never: multiplayer, accounts, monetisation, native apps, localisation beyond English.
@@ -106,7 +106,7 @@ Not in the MVP (only after every P0 and P1 passes, and then in this order): {{FI
 
 <!--
 Fill the rows: number them 1..N in order (replace "n-5".."n" with real numbers). Aim for 15-20 rows: ~12-15 P0, 3-5 P1,
-1-2 P2. Every pass condition is testable with numbers, seeds or counts. Zephyr examples:
+1-2 P2. Every pass condition is testable with numbers, seeds or counts. Examples:
 | 2 | Timeline queue | The queue shows ≥ 10 upcoming turns. The order matches the sim's prediction. Selecting an action shows a preview of the queue after it. A delay effect moves the target later exactly as previewed. | both | P0 |
 | 5 | Dungeon crawl | Each seed yields a map with 16–22 rooms, revealed as you explore, and ≥ 8 room types. Every generated map has a path from entrance to boss (harness: 1,000 seeds). Two seeds give different maps. | both | P0 |
 | 10 | Full act | A UI-driven gold-path player completes Act 1. The harness's "good" player wins on 55–75% of 200 seeds, "careless" on 15–35%, random < 10%. Modelled act length 12–15 min (median). | both | P0 |
@@ -125,7 +125,7 @@ P0 = must for the MVP. P1 = should, after P0. P2 = only after all P0 and P1 pass
   - Never use ripped or extracted assets from commercial games, films or books, and nothing from the reference games.
 - **Names.** Every name (characters, items, places, skills) is original, or public-domain folklore/history. No third-party trademarks or franchise names in the game or in any prompt.
 - **Respect and taboos.** {{FILL: TASK §3 setting taboos}}
-  <!-- What the setting must avoid. Zephyr: "Slavic folklore, not caricature. No faux-Cyrillic lettering. No extremist-associated symbols (see STYLE_BIBLE.md)." -->
+  <!-- What the setting must avoid. Example: "Slavic folklore, not caricature. No faux-Cyrillic lettering. No extremist-associated symbols (see STYLE_BIBLE.md)." -->
 - **No questions.** Decide, write to `Docs/DECISIONS.md`, continue.
 - **Language.** English everywhere. Setting-specific terms may appear in italics with an English gloss.
 
@@ -137,7 +137,7 @@ Write and keep `Docs/STYLE_BIBLE.md` (a draft exists) and follow it. Open every 
 <!--
 Summarise the art direction from QUESTIONS.md "Art style" in 15-30 lines: the surfaces or layers of the look, what to Keep,
 what to Upgrade (motion and juice), what to Avoid. The full detail goes into Docs/STYLE_BIBLE.md.
-Zephyr example: "Two surfaces: Lacquer is the chrome (black lacquer, gold filigree, vermilion accents) for HUD, battle,
+Example: "Two surfaces: Lacquer is the chrome (black lacquer, gold filigree, vermilion accents) for HUD, battle,
 map, hub; Lubok is the illustration (paper-toned woodcut prints, bold outlines, flat tint) for room, event and death
 cards. Keep: gold and vermilion on deep black, ornate borders with discipline, large legible numbers. Upgrade: card flips,
 wind streaks, lantern light at night. Avoid: clutter, text under 13 px, photographic textures, glossy 3D bevels,
@@ -152,7 +152,7 @@ The core moment-to-moment system (battle, movement, building, puzzle...). Read t
 Give: the layout; the deterministic model with formulas (state fields, update order, tie-breaks never by RNG);
 the player's actions and their costs; what the UI must preview before the player commits (and that the preview equals
 the outcome); feedback; pace targets in seconds; enemy/opponent AI (deterministic given the seed).
-Zephyr §5 "Combat: the initiative timeline": every unit has nextAt; after acting nextAt += actionDelay × 100 / speed;
+Example §5 "Combat: the initiative timeline": every unit has nextAt; after acting nextAt += actionDelay × 100 / speed;
 delay classes quick 60 / normal 100 / heavy 140; the queue shows the next ≥ 10 turns; hovering an action previews the
 queue; effects delay/haste/slow/stun/interrupt; 4 skills plus Guard and Item; Breath 2 at start +1 per turn max 5;
 intents within 3 turns; affinities ×1.5 / ×0.5 / ×0; normal battle 45–90 s.
@@ -162,14 +162,14 @@ intents within 3 turns; affinities ×1.5 / ×0.5 / ×0; normal battle 45–90 s.
 
 {{FILL: TASK §6 signature mechanic A}}
 <!-- The first signature mechanic: state, effect (with the tuning key and default), how it changes, how the player
-     steers it, interactions, and how it stays readable. Zephyr §6 "The Wind": wind = { side, strength 0..3 } with a
+     steers it, interactions, and how it stays readable. Example §6 "The Wind": wind = { side, strength 0..3 } with a
      one-round forecast; at each round marker the favoured side gets nextAt −= strength × windStep (default 12 ticks);
      seeded shift table biased by room and time of day; ≥ 2 abilities steer it. -->
 
 ## 7. {{FILL: TASK §7 signature mechanic B title}}
 
 {{FILL: TASK §7 signature mechanic B}}
-<!-- The second signature mechanic or the session's pressure system. Zephyr §7 "Day, Dusk, Night": each unvisited room
+<!-- The second signature mechanic or the session's pressure system. Example §7 "Day, Dusk, Night": each unvisited room
      advances the clock (Day 5, Dusk 2, Night 4 steps); night gives enemies +25% HP and damage and rewards +50%;
      phase changes shown by a card; night is a choice, not a timer. -->
 
@@ -177,7 +177,7 @@ intents within 3 turns; affinities ×1.5 / ×0.5 / ×0; normal battle 45–90 s.
 
 {{FILL: TASK §8 goal and climax}}
 <!-- The session's goal, climax or boss, and how earlier play feeds into it. Include a fairness requirement the harness
-     can measure. Zephyr §8 "Koschei's needle": the boss has reforms = 3, each needle stage found removes one; the chain
+     can measure. Example §8 "Koschei's needle": the boss has reforms = 3, each needle stage found removes one; the chain
      oak/chest → hare/duck → egg/needle in three clue rooms off the main path; "Break the needle" kills at ≤ 50% HP;
      harness: beatable with 0 stages (rarely) and with 3 stages (usually). If the genre has no boss, describe the win
      condition and the end-of-session moment instead. -->
@@ -186,7 +186,7 @@ intents within 3 turns; affinities ×1.5 / ×0.5 / ×0; normal battle 45–90 s.
 
 {{FILL: TASK §9 characters and roster}}
 <!-- Who the player controls or collects: roster table (| Name | Kind | Role | Signature |), growth inside a session,
-     failure and loss rules (death, wounds, damage, lives), fairness targets. Zephyr §9 "Party: recruitment, roster,
+     failure and loss rules (death, wounds, damage, lives), fairness targets. Example §9 "Party: recruitment, roster,
      permadeath": party up to 4; 4 recruitable heroes; level up every ~3 fights with a pick of 3; downed → Wound →
      death on a second down; a wipe ends the run; at least one hero should fall in about a third of runs. -->
 
@@ -194,7 +194,7 @@ intents within 3 turns; affinities ×1.5 / ×0.5 / ×0; normal battle 45–90 s.
 
 {{FILL: TASK §10 world and structure}}
 <!-- The space the session happens in: map or level generation (seeded), fog/reveal, node or room types, rewards,
-     and a pace target from the time model in data/tuning.json. Zephyr §10 "The dungeon crawl: map and room cards":
+     and a pace target from the time model in data/tuning.json. Example §10 "The dungeon crawl: map and room cards":
      16–22 rooms on a grid, spanning tree plus 2–4 loops, boss at maximum distance; ≥ 8 room types as flipping cards;
      rewards pick 1 of 3; 12–15 minutes per act. -->
 
@@ -203,7 +203,7 @@ intents within 3 turns; affinities ×1.5 / ×0.5 / ×0; normal battle 45–90 s.
 {{FILL: TASK §11 meta-progression}}
 <!-- Between sessions: hub, currency, ≥ N permanent upgrades, unlocks that change the next session's pools, lore
      revealed run by run, persistence (meta and session saved separately, versioned, export/import).
-     Zephyr §11 "Meta-progression and lore": Baba Yaga's hut as hub; firebird feathers (a failed run always earns some);
+     Example §11 "Meta-progression and lore": Baba Yaga's hut as hub; firebird feathers (a failed run always earns some);
      ≥ 12 upgrades; the Book of Tales with ≥ 10 fragments. -->
 
 ## 12. Content model
@@ -217,25 +217,25 @@ All content is data (JSON in `data/`), validated by zod schemas at load (`src/co
 
 {{FILL: TASK §12 working lists}}
 <!-- Working lists the Content lane starts from (rename freely with a DECISIONS line): e.g. the MVP enemy set, the boss,
-     item families. Then "Later (post-MVP, for the plan only)". Zephyr table rows: "| Hero | 4 (+ classes P1) | id, name,
+     item families. Then "Later (post-MVP, for the plan only)". Example table rows: "| Hero | 4 (+ classes P1) | id, name,
      kind, role, base stats, skills, level-up pool, portrait |", "| Event | ≥ 15 | id, card art, conditions, options,
      lore links |", ... ; then a 12-enemy list and the boss with its phases. -->
 
 ## 13. Screens, HUD, controls, devices
 
 - **Screens:** {{FILL: TASK §13 screen flow}} Plus Settings (audio, speed, reduced motion, text size, save export/import) and Credits (assets and licences).
-  <!-- Zephyr: Title → Hub → Hero pick → Map (with room-card overlay) → Battle → Rewards → Death card / Run summary → Hub. -->
+  <!-- Example: Title → Hub → Hero pick → Map (with room-card overlay) → Battle → Rewards → Death card / Run summary → Hub. -->
 - **Write `Docs/MAP.md` at M0:** screen flow, navigation, layouts at 1440×900 and 390×844, and the fixed capture states (§19), before building the final UI.
 - **HUD.** {{FILL: TASK §13 HUD contents}} Tooltips on every number (long-press on touch).
-  <!-- Zephyr: party portraits with HP, Breath and Wounds; gold, feathers, items; the clock dial; needle progress; the seed. -->
+  <!-- Example: party portraits with HP, Breath and Wounds; gold, feathers, items; the clock dial; needle progress; the seed. -->
 - **Controls.**
   - {{FILL: TASK §13 controls}}
-    <!-- Zephyr: "Desktop first: mouse plus keyboard shortcuts (1–4 skills, G guard, I item, Tab cycle targets, Enter confirm, Esc back, M map)." -->
+    <!-- Example: "Desktop first: mouse plus keyboard shortcuts (1–4 skills, G guard, I item, Tab cycle targets, Enter confirm, Esc back, M map)." -->
   - Everything is reachable without hover.
   - Touch: tap to select, tap again to confirm; long-press for info.
 - **Devices.**
   - {{FILL: TASK §13 device priority}}
-    <!-- Zephyr: "Fully playable on phones in portrait at 390×844 and up to 4K." Options: desktop-first with phone support; phone-first portrait; desktop only (then drop the phone rows). -->
+    <!-- Example: "Fully playable on phones in portrait at 390×844 and up to 4K." Options: desktop-first with phone support; phone-first portrait; desktop only (then drop the phone rows). -->
   - No horizontal scroll from 360 px; tap targets ≥ 44 px.
   - Test at 390 px at every gate.
 
@@ -244,9 +244,9 @@ All content is data (JSON in `data/`), validated by zod schemas at load (`src/co
 - **Music:** free, permissively licensed tracks (CC0 or CC-BY, logged) for {{FILL: TASK §14 music contexts and instrumentation}}.
   - Lazy-load the tracks; loop seamlessly; loudness-normalise them (−16 LUFS).
   - If no fitting track is found, use a procedural drone/ostinato from the Web Audio synth and log the decision.
-  <!-- Zephyr: "the hub, map by day, map by night, battle and boss. Folk instrumentation (gusli, balalaika, choir, drones) is preferred." -->
+  <!-- Example: "the hub, map by day, map by night, battle and boss. Folk instrumentation (gusli, balalaika, choir, drones) is preferred." -->
 - **SFX:** synthesised in code with the Web Audio API (no files): {{FILL: TASK §14 SFX cue list}}.
-  <!-- Zephyr: hits per damage kind, Guard, turn tick, queue shift, wind gust, card flip, phase change, downed, death toll, victory, needle break. -->
+  <!-- Example: hits per damage kind, Guard, turn tick, queue shift, wind gust, card flip, phase change, downed, death toll, victory, needle break. -->
 - **Mixer:** master, music and SFX sliders, mute, and a respectful default volume. Audio starts only after the first user input.
 
 ## 15. Technical architecture, performance and size budgets
@@ -272,12 +272,12 @@ All content is data (JSON in `data/`), validated by zod schemas at load (`src/co
 - **Test API:** `window.__{{GAME_SLUG}}` (dev and test builds; stripped or inert in production) with:
   - `getState()`, `newRun(seed, ...)`, `loadFixture(name)`, `setSpeed(x)`;
   - {{FILL: TASK §15 test API extras}}
-    <!-- Cheats that make each signature mechanic testable. Zephyr: predictQueue(), forceWind(side, strength), setClock(step), revealMap(), giveRelic(id). -->
+    <!-- Cheats that make each signature mechanic testable. Example: predictQueue(), forceWind(side, strength), setClock(step), revealMap(), giveRelic(id). -->
   - Named fixtures for every capture state.
 - **Performance budgets:**
   - 60 FPS in the main scenes at 1440×900; ≥ 50 FPS at 390×844 with 4× CPU throttle.
   - {{FILL: TASK §15 sim timing budgets}}
-    <!-- Zephyr: a sim step < 2 ms; queue preview on hover < 4 ms; map generation < 50 ms. -->
+    <!-- Example: a sim step < 2 ms; queue preview on hover < 4 ms; map generation < 50 ms. -->
   - Time to interactive < 2 s from the local preview.
   - Memory stable over a 30-minute soak (heap growth < 10%).
 - **Size budgets:**
@@ -320,7 +320,7 @@ The detailed plan and status live in `Docs/PLAN.md`; the queue lives in `Docs/TO
 6-8 milestones in total, M0 and M1 as above. M2 is the first playable core loop (large-model gate). The acceptance test
 starts at {{ACCEPTANCE_FROM}}. The last milestone ({{MVP_MILESTONE}}) is the art and audio pass and the MVP gate:
 "all P0 green, large-model review + fresh playtest, trailer, deploy; tag {{MVP_TAG}} / mvp". Large-model gates: {{LARGE_GATES}}.
-Zephyr rows: M2 First playable battle | M3 Dungeon crawl and day/night (acceptance run #1) | M4 Party, recruitment,
+Example rows: M2 First playable battle | M3 Dungeon crawl and day/night (acceptance run #1) | M4 Party, recruitment,
 permadeath | M5 Boss and the needle | M6 Meta and hub | M7 Art and audio pass (MVP).
 -->
 
@@ -330,18 +330,18 @@ After {{MVP_MILESTONE}}: P1 rows by value, then the post-MVP list of §2. The ow
 
 - **Unit and sim tests (Vitest):**
   - {{FILL: TASK §18 sim test list}}
-    <!-- Zephyr: timeline maths, preview equals outcome, wind push, clock, night modifiers, needle reforms, wounds/death/wipe, map connectivity. -->
+    <!-- Example: timeline maths, preview equals outcome, wind push, clock, night modifiers, needle reforms, wounds/death/wipe, map connectivity. -->
   - save round-trip and migration;
   - determinism (same seed and inputs give the same state hash).
 - **Simulation harness** (`npm run harness`, quick mode in `check`):
   - scripted players (good, careless, random) play full MVP sessions headlessly on fixed seeds;
   - it asserts {{FILL: TASK §18 harness bands}}, session length (time model), no softlocks (every state has a legal action), no NaN;
-    <!-- Zephyr: win-rate bands (good 55–75%, careless 15–35%, random < 10% of 200 seeds), map solvability over 1,000 seeds, needle fairness. -->
+    <!-- Example: win-rate bands (good 55–75%, careless 15–35%, random < 10% of 200 seeds), map solvability over 1,000 seeds, needle fairness. -->
   - output: `Docs/goldpath/<ts>-sim/checks.json`.
 - **Gold path (Playwright, real UI):**
   - plays §1 end to end through real clicks with a fixed seed and the speed setting (pacing asserted in sim time, not wall time);
   - {{FILL: TASK §18 gold path route}}
-    <!-- Zephyr: title → hub → new run → battle with a wind shift → recruit → night → needle stages → boss → break the needle → summary → hub upgrade → second run starts with the unlock. -->
+    <!-- Example: title → hub → new run → battle with a wind shift → recruit → night → needle stages → boss → break the needle → summary → hub upgrade → second run starts with the unlock. -->
   - screenshots at fixed checkpoints, console errors collected;
   - output `Docs/goldpath/<ts>/checks.json`, written atomically.
   - A phone variant (390×844, touch) runs the same path at gates.
@@ -372,7 +372,7 @@ After {{MVP_MILESTONE}}: P1 rows by value, then the post-MVP list of §2. The ow
   - `/` the game;
   - `/trailer/` the newest trailers;
   - `/progress/` the plain-language build story from `Docs/progress_story.md` (CLAUDE.md §3b), plus overview stats, tokens (`scripts/token_usage.py`), Claude cost per chunk (`Docs/AUTODRIVE_LOG.md`), playtest scores, screenshots, videos, and a collapsed technical log (DEVLOG, decisions, reviews, commits).
-- **Hosting:** `https://{{DOMAIN}}` on the owner's server {{SERVER_IP}} (root over ssh, nginx and certbot).
+- **Hosting:** `https://{{DOMAIN}}` on the owner's server {{SERVER_HOST}} (ssh as {{SERVER_SSH}}, nginx and certbot; sudo when the user is not root).
   - The one-time setup is in `deploy/README.md`.
   - Deploy at every green gate from M0 on with `DEPLOY_SSH={{SERVER_SSH}} bash scripts/deploy_server.sh`, which builds, uploads to `{{DEPLOY_DIR}}` and swaps atomically.
   - Then verify that the live bundle name matches `dist/`.

@@ -56,12 +56,12 @@ Each item names its lane. Mark items done with a short evidence note in parenthe
 
 ### Art
 - [ ] T15 (Art, mid model) The first concept sheet in `Docs/concepts/proposed/`: {{FILL: TODO T15 concept sheet contents}}. Render it to PNG. The reviewer agent checks it against the style bible; update STYLE_BIBLE.md with what was learned.
-  <!-- 3-5 representative pieces. Zephyr: a room card in its frame, a medallion portrait, the queue rail with 10 tokens and a wind forecast, two UI icons. -->
+  <!-- 3-5 representative pieces. Example: a room card in its frame, a medallion portrait, the queue rail with 10 tokens and a wind forecast, two UI icons. -->
 
 ### Site and deploy
 - [ ] T16 (Integrator) The site: `npm run build && python scripts/build_site.py` works (placeholder trailer page, `/progress/`); `python -I scripts/token_usage.py`.
 - [ ] T17 (Integrator, large model) The one-time server setup with `DEPLOY_SSH={{SERVER_SSH}} bash scripts/server_setup.sh` (skip if the owner already ran it; the script is safe to re-run):
-  - if DNS for {{DOMAIN}} does not point at {{SERVER_IP}}, the script installs HTTP only; log it in DECISIONS and in REPORT "owner actions";
+  - if DNS for {{DOMAIN}} does not point at the server {{SERVER_HOST}}, the script installs HTTP only; log it in DECISIONS and in REPORT "owner actions";
   - then `bash scripts/deploy_server.sh` and check the live bundle.
   - Never touch other sites.
 

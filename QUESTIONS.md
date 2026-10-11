@@ -6,14 +6,14 @@ Each question says what it fills:
 - `project.json: KEY` is a simple placeholder that `scripts/fill_template.py` replaces everywhere;
 - `TASK §n`, `STYLE`, `PLAN`, `TODO`, `REFS`, `DECISIONS` are rich FILL sections that Claude writes from the answers (Docs/TASK.md, Docs/STYLE_BIBLE.md, Docs/PLAN.md, Docs/TODO.md, Docs/refs/README.md, Docs/DECISIONS.md).
 
-When all answers are in: write `project.json`, run the fill script, then write every rich section it lists, at the depth of the Zephyr examples in the comments. Finish with `python -I scripts/fill_template.py --check` showing no placeholders left.
+When all answers are in: write `project.json`, run the fill script, then write every rich section it lists, at the depth of the examples in the comments. Finish with `python -I scripts/fill_template.py --check` showing no placeholders left.
 
 ---
 
 ## A. Identity
 
-**A1. Name.** What is the game called? (Tempest, Nomad, Mirage, Eclipse, Monsoon, ...)
-Fills: `project.json: GAME_NAME` (and the derived `GAME_SLUG`, `AUTODRIVE_ENV` such as `TEMPEST_AUTODRIVE`, `MODEL_ENV`, `DEPLOY_DIR`, `PROJECT_DIR_*`).
+**A1. Name.** What is the game called? (one word works best, for example Skyward)
+Fills: `project.json: GAME_NAME` (and the derived `GAME_SLUG`, `AUTODRIVE_ENV` such as `SKYWARD_AUTODRIVE`, `MODEL_ENV`, `DEPLOY_DIR`, `PROJECT_DIR_*`).
 
 **A2. Pitch.** Describe the game in one paragraph (3-4 sentences, player-facing) and in one line.
 - a) Claude drafts both from the answers to B-E, the owner approves ★
@@ -23,8 +23,8 @@ Fills: `project.json: ONE_PARAGRAPH_PITCH`, `TAGLINE`, `TRAILER_LEDE`; README, t
 ## B. Genre and core loop
 
 **B1. Genre.** What kind of game is it?
-- a) Turn-based tactics or party RPG roguelite ★ (proven in Zephyr)
-- b) Idle / incremental with light active play (proven in Renegade)
+- a) Turn-based tactics or party RPG roguelite ★ (proven in an earlier full run)
+- b) Idle / incremental with light active play (proven in an earlier full run)
 - c) Deckbuilder or card battler
 - d) Real-time light action (arena, twin-stick, auto-battler)
 Fills: `project.json: GENRE`; TASK §0, §5; the playtest areas.
@@ -55,7 +55,7 @@ Fills: TASK §9 (loss rules), §11.
 
 **D1. Setting.** Where and when does it take place?
 - a) A folklore or mythology (pick one culture; public-domain figures welcome)
-- b) Original fantasy world with a strong single motif (storm, desert, mirrors, eclipse, monsoon) ★ (matches the project name)
+- b) Original fantasy world with a strong single motif (storm, desert, mirrors, tides, frost) ★ (matches the project name)
 - c) Science fiction or post-apocalypse
 - d) Historical with a light fantastic twist
 Fills: `project.json: SETTING_SHORT`; TASK §0, §3 taboos, §12 working lists; STYLE inspiration and copy voice.
@@ -75,10 +75,10 @@ Fills: TASK §3 "Respect and taboos"; STYLE forbidden list.
 ## E. Signature mechanics
 
 **E1. Hooks.** Which 2-3 mechanics make this game itself? Each needs a state, a rule with numbers, a way to steer it, and a readable on-screen form.
-- a) An environmental force that pushes the core system (Zephyr's Wind on the turn queue) ★
-- b) A clock or phase cycle that changes risk and reward (Zephyr's Day/Dusk/Night)
-- c) A hidden goal to uncover before the climax (Zephyr's boss needle)
-- d) A build system with synergies (Renegade's procedural dao builds)
+- a) An environmental force that pushes the core system (for example a wind that shifts the turn queue) ★
+- b) A clock or phase cycle that changes risk and reward (for example Day/Dusk/Night)
+- c) A hidden goal to uncover before the climax (for example a boss's hidden weak point)
+- d) A build system with synergies (for example procedural skill trees)
 Fills: TASK §6, §7, §8 (titles and bodies), §0 bullets, §15 test-API cheats, §18 sim tests, STYLE motifs and reserved colours.
 
 **E2. Characters.** Who does the player control or collect?
@@ -152,11 +152,11 @@ Fills: TASK §13 devices and controls, §2 phone row.
 Fills: TASK §1 (named slice and 8-12 steps), §2 priorities, rows and post-MVP list, §17 milestones, PLAN table and sections, `project.json: MVP_MILESTONE`, `MVP_TAG`, `LARGE_GATES`, `ACCEPTANCE_FROM`.
 
 **K2. Milestones.** How many?
-- a) M0-M7 like Zephyr: scaffold, sim core, first playable, then one per pillar, art/audio last ★
+- a) M0-M7 like Example: scaffold, sim core, first playable, then one per pillar, art/audio last ★
 - b) Fewer, larger milestones (M0-M5)
 Fills: TASK §17, PLAN, `LARGE_GATES` (default "M2, M5 and M7": first playable, the climax, the MVP).
 
-**K3. Content counts.** How much content for the MVP? Claude proposes counts per entity (Zephyr: 4 heroes, ≥ 12 enemies, 1 boss, ≥ 15 events, ≥ 16 relics, ≥ 12 upgrades, ≥ 10 lore fragments) ★
+**K3. Content counts.** How much content for the MVP? Claude proposes counts per entity (example: 4 heroes, ≥ 12 enemies, 1 boss, ≥ 15 events, ≥ 16 relics, ≥ 12 upgrades, ≥ 10 lore fragments) ★
 Fills: TASK §12 table and working lists, §2 content-counts row.
 
 ## L. Run mode
@@ -194,16 +194,16 @@ Fills: TASK §0 references table, REFS study table and art traditions, STYLE ins
 
 ## O. Hosting, ports and repository
 
-**O1. Domain.** Default `<slug>.kryptos.gg` on 72.62.17.59 ★, or another subdomain.
-Fills: `project.json: DOMAIN`, `SERVER_IP` (and the derived `DNS_ZONE`, `SERVER_SSH`, `DEPLOY_DIR`). The owner creates the DNS A record (SETUP.md step 4).
+**O1. Domain.** Default `<slug>.<base_domain>` on `server_host` from `owner.json` ★, or another domain.
+Fills: `project.json: DOMAIN` only when it differs (the defaults come from `owner.json`: `DNS_ZONE`, `SERVER_HOST`, `SERVER_SSH` = `<server_user>@<server_host>`, `DEPLOY_DIR` = `<web_root_base>/<slug>`). The owner creates the DNS A record (SETUP.md step 4).
 
-**O2. Ports.** Take the project's row in `PORTS.md` ★ (Tempest 5373/4373, Nomad 5473/4473, Mirage 5573/4573, Eclipse 5673/4673, Monsoon 5773/4773), or the next free pair for a new name.
+**O2. Ports.** Take the project's entry in `owner.json` `ports_registry` ★, or the next free pair (each parallel project gets a unique pair; see `PORTS.md`), added to `ports_registry` first.
 Fills: `project.json: DEV_PORT`, `PREVIEW_PORT`.
 
-**O3. GitHub remote.** Default `https://github.com/Ernestohh/<Name>.git` ★ (HTTPS: this PC has no GitHub SSH key). Does the repository exist already?
+**O3. GitHub remote.** Default `https://github.com/<github_user>/<Name>.git` from `owner.json` ★ (HTTPS: the autodrive driver pushes with the saved HTTPS credentials, not an SSH key). Does the repository exist already?
 - a) The owner creates an empty repo on GitHub first ★
 - b) It exists and is empty
-Fills: `project.json: GITHUB_REMOTE`; SETUP.md step 3.
+Fills: `project.json: GITHUB_REMOTE` only when it differs from the default; SETUP.md step 3.
 
 **O4. Server setup.** Who runs the one-time nginx/certbot setup?
 - a) The owner, during setup (SETUP.md step 5) ★

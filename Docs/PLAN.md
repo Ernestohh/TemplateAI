@@ -22,7 +22,7 @@ Rules for this plan:
 <!--
 One row per milestone from TASK.md §17, same names. Gates name the acceptance rows they must pass, the large-model
 review + fresh playtest where it applies ({{LARGE_GATES}}), trailer, deploy and the tag.
-Zephyr rows:
+Example rows:
 | M2 First playable battle | not started | Gold path (battle) green at both viewports; acceptance rows 2-4 pass; **large-model review + fresh playtest**; trailer; deploy; tag m2 |
 | M3 Dungeon crawl and day/night | not started | Acceptance run #1 (rows 1-6, 12); playtest; trailer; deploy; tag m3 |
 | M7 Art and audio pass (MVP) | not started | **MVP gate:** all P0 rows green at both viewports; budgets met; **large-model review + fresh playtest**; trailer; deploy; tag m7 + mvp |
@@ -57,12 +57,12 @@ Zephyr rows:
 {{FILL: PLAN M1 detail}}
 <!-- All headless, in src/sim/ with tests: the core model of TASK.md §5 with its formulas, the signature mechanics of
      §6-§7 as far as the core needs them, data schemas and the first data, the harness in encounter mode.
-     Zephyr: timeline, queue prediction and preview, effects, rounds, wind, combat rules, enemy AI, 2 heroes + 4 enemies,
+     Example: timeline, queue prediction and preview, effects, rounds, wind, combat rules, enemy AI, 2 heroes + 4 enemies,
      harness battle mode. -->
 
 {{FILL: PLAN milestone sections M2..MVP}}
 <!-- One "## Mx Name" section per milestone with 4-8 bullets grouped by bold labels (Screen, Systems, Content, Saves,
-     Difficulty, Gate). The last one is the art and audio pass and the MVP gate. Zephyr M5:
+     Difficulty, Gate). The last one is the art and audio pass and the MVP gate. Example M5:
      ## M5 Boss and the needle
      - **Boss:** Leshy with 3 phases; deathless reforms and Wrath.
      - **The needle chain:** 3 clue rooms placed off the main path; rumours; night reveal; the hare chase; the egg choice.
